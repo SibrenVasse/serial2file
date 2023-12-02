@@ -11,3 +11,7 @@ clap = { version = "4.4.10", features = ["derive"] }
 clio = "0.3.4"
 serialport = "4.2.2"
 tokio = { version = "1", features = ["full"] }
+
+[profile.release]
+strip = true
+lto = true
