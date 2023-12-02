@@ -62,5 +62,5 @@ Escape character is '^]'.
 ### Compilation
 ~~~
 cargo build --release
-cargo run -- -o /tmp/output -s /dev/ttyUSB0
+cargo run --release -- -o /tmp/output -s /dev/ttyUSB0
 ~~~
