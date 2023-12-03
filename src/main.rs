@@ -79,7 +79,10 @@ async fn listen_network(port: u16, channel_rx: Receiver<Vec<u8>>) -> io::Result<
         tokio::spawn(async move {
             loop {
                 let message = rx.recv().await.unwrap();
-                socket.write_all(&message).await.unwrap();
+                match socket.write_all(&message).await {
+                    Ok(_) => {}
+                    Err(_) => { return; }
+                }
             }
         });
     }
